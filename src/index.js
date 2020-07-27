@@ -1,3 +1,3 @@
 import './module'
-import './scss/style.scss'
+import './scss/index.scss'
 console.log('Working!')
