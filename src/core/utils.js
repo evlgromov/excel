@@ -4,3 +4,7 @@ export function capitalize(string) {
   }
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
+
+export function getPropValue(el, prop) {
+  return parseInt(window.getComputedStyle(el)[prop])
+}
