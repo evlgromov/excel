@@ -1,5 +1,4 @@
 import {$} from '@core/dom';
-import {getPropValue} from '@core/utils';
 
 
 export function resizeHandler($root, e) {
@@ -11,7 +10,7 @@ export function resizeHandler($root, e) {
 
   document.onmousemove = event => {
     if (type === 'col') {
-      const minCellWidth = getPropValue($parent.$el, 'min-width')
+      const minCellWidth = 40
       const minDelta = coords.width - minCellWidth
       const delta = event.pageX - coords.right
       const resizeValue = delta < -minDelta
@@ -20,7 +19,7 @@ export function resizeHandler($root, e) {
       value = coords.width + delta
       $resizer.css({right: -resizeValue + 'px'})
     } else {
-      const minRowHeight = getPropValue($parent.$el, 'min-height')
+      const minRowHeight = 20
       const minDelta = coords.height - minRowHeight
       const delta = event.pageY - coords.bottom
       const resizeValue = delta < -minDelta
